@@ -8,7 +8,9 @@
   :config
   (company-auctex-init)
   (setq-default TeX-master nil) ; Query for master file.
-  (setq-default TeX-PDF-mode t))
+  (setq-default TeX-PDF-mode t)
+  (setq TeX-parse-self t) ; Enable parse on load.
+  (setq TeX-auto-save t)) ; Enable parse on save.)
 
 (req-package yasnippet
   :ensure t

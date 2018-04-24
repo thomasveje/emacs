@@ -20,6 +20,9 @@
 ;; Enable line numbers
 (global-linum-mode 1)
 
+;; Enable column numbers
+(setq column-number-mode t)
+
 ;; Interactive-Do-Things
 ;; https://www.emacswiki.org/emacs/InteractivelyDoThings#toc1
 ;(ido-mode 1)
@@ -113,9 +116,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" default)))
+ '(fill-column 80)
  '(package-selected-packages
    (quote
-    (material-theme company-auctex atomic-chrome wgrep-helm helm-themes helm-descbinds helm-swoop helm-helm-commands ace-jump-helm-line fsharp-mode elpy vy wgrep helm-gitignore flycheck-pos-tip expand-region edit-server helm-company avy graphviz-dot-mode load-dir req-package use-package-chords use-package-el-get makefile-runner))))
+    (auto-package-update airplay material-theme company-auctex atomic-chrome wgrep-helm helm-themes helm-descbinds helm-swoop helm-helm-commands ace-jump-helm-line fsharp-mode elpy vy wgrep helm-gitignore flycheck-pos-tip expand-region edit-server helm-company avy graphviz-dot-mode load-dir req-package use-package-chords use-package-el-get makefile-runner))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
