@@ -8,9 +8,4 @@
   (setq elpy-rpc-python-command "python3")
   (setq python-shell-interpreter "python3"))
 
-;; (req-package find-file-in-project
-;;   :ensure t
-;;   :require ivy
-;;   :pin melpa-stable)
-
 (provide 'init-elpy)
