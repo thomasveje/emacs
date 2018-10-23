@@ -3,6 +3,7 @@
 (req-package flycheck
   :ensure t
   :pin melpa-stable
+  :require seq
   :config (progn (global-flycheck-mode 1)
                  (set-face-attribute 'flycheck-warning nil
                                      :inherit 'warning

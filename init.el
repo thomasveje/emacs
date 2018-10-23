@@ -111,18 +111,32 @@
 ;; load extensions
 
 (add-hook 'after-init-hook (lambda () (load "~/.emacs.d/init-real.el")))
+;; (custom-set-variables
+;;  ;; custom-set-variables was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  '(custom-safe-themes
+;;    (quote
+;;     ("732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" default)))
+;;  '(fill-column 69)
+;;  '(package-selected-packages
+;;    (quote
+;;     (haskell-mode openwith helm-bibtex find-file-in-project yasnippet ivy flycheck company use-package auto-package-update airplay material-theme company-auctex atomic-chrome wgrep-helm helm-themes helm-descbinds helm-swoop helm-helm-commands ace-jump-helm-line fsharp-mode elpy vy wgrep helm-gitignore flycheck-pos-tip expand-region edit-server helm-company avy graphviz-dot-mode load-dir req-package use-package-chords use-package-el-get makefile-runner))))
+;; (custom-set-faces
+;;  ;; custom-set-faces was added by Custom.
+;;  ;; If you edit it by hand, you could mess it up, so be careful.
+;;  ;; Your init file should contain only one such instance.
+;;  ;; If there is more than one, they won't work right.
+;;  )
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" default)))
- '(fill-column 80)
  '(package-selected-packages
    (quote
-    (find-file-in-project yasnippet ivy flycheck company use-package auto-package-update airplay material-theme company-auctex atomic-chrome wgrep-helm helm-themes helm-descbinds helm-swoop helm-helm-commands ace-jump-helm-line fsharp-mode elpy vy wgrep helm-gitignore flycheck-pos-tip expand-region edit-server helm-company avy graphviz-dot-mode load-dir req-package use-package-chords use-package-el-get makefile-runner))))
+    (el-get wgrep-helm use-package-el-get use-package-chords spinner req-package page-break-lines openwith material-theme markdown-mode magit-popup load-dir irony hydra helm-themes helm-swoop helm-helm-commands helm-gitignore helm-descbinds helm-company helm-bibtex haskell-mode graphviz-dot-mode git-commit fsharp-mode flycheck-pos-tip expand-region elpy edit-server company-auctex auto-package-update atomic-chrome airplay ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

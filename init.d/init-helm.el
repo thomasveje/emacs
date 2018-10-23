@@ -24,9 +24,11 @@
   :init (define-key helm-map (kbd "C-;") 'ace-jump-helm-line))
 
 
-(req-package helm-gitignore
+(req-package helm-bibtex
   :ensure t
-  :commands helm-gitignore)
+  :require helm
+  :pin melpa-stable)
+
 
 (req-package helm-company
   :ensure t
@@ -35,10 +37,23 @@
   :config (progn (define-key company-mode-map (kbd "C-:") 'helm-company)
                  (define-key company-active-map (kbd "C-:") 'helm-company)))
 
+
+(req-package helm-descbinds
+  :ensure t
+  :commands helm-descbinds
+  :require helm)
+
+
+(req-package helm-gitignore
+  :ensure t
+  :commands helm-gitignore)
+
+
 (req-package helm-helm-commands
   :ensure t
   :commands helm-helm-commands
   :require helm)
+
 
 (req-package helm-swoop
   :ensure t
@@ -46,10 +61,6 @@
   :require helm
   :init (define-key isearch-mode-map (kbd "M-i") 'helm-swoop-from-isearch))
 
-(req-package helm-descbinds
-  :ensure t
-  :commands helm-descbinds
-  :require helm)
 
 (req-package helm-package
   :commands helm-package
@@ -69,8 +80,5 @@
   :commands helm-themes
   :require helm)
 
-
-;; (req-package helm-org-rifle
-;;   :ensure t)
 
 (provide 'init-helm)

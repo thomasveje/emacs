@@ -17,6 +17,21 @@
 
 (eval-when-compile (package-initialize))
 
+;; el-get
+
+(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+(unless (require 'el-get nil 'noerror)
+  (require 'package)
+  (package-refresh-contents)
+  (package-initialize)
+  (package-install 'el-get)
+  (require 'el-get))
+
+(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+(el-get 'sync)
+
+
 (defun require-package (package)
   "refresh package archives, check package presence and install if it's not installed"
   (if (null (require package nil t))
@@ -31,16 +46,13 @@
 
 ;; use package
 
-(require-package 'use-package)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (require 'use-package)
+(require-package 'use-package)
 
-;; el-get
-
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(require-package 'el-get)
-(require 'el-get)
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/el-get/recipes")
-(el-get 'sync)
 
 ;; :el-get keyword for use-package
 
@@ -74,3 +86,4 @@
   (load-dir-one my-init-dir)
   (req-package-finish)
   (funcall 'select-theme))
+
