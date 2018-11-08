@@ -1,5 +1,4 @@
-*
-!.gitignore
-!init.el
-!init-real.el
-!init.d/
+tmp
+elpa
+el-get
+.last-package-update-day
