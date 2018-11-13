@@ -137,7 +137,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (find-file-in-project flycheck auctex yasnippet ivy wgrep company avy use-package wgrep-helm use-package-el-get use-package-chords spinner req-package page-break-lines openwith material-theme markdown-mode magit-popup load-dir irony hydra helm-themes helm-swoop helm-helm-commands helm-gitignore helm-descbinds helm-company helm-bibtex haskell-mode graphviz-dot-mode git-commit fsharp-mode flycheck-pos-tip expand-region elpy edit-server company-auctex auto-package-update atomic-chrome airplay ace-jump-helm-line))))
+    (helm gh-md find-file-in-project flycheck auctex yasnippet ivy wgrep company avy use-package wgrep-helm use-package-el-get use-package-chords spinner req-package page-break-lines openwith material-theme markdown-mode magit-popup load-dir irony hydra helm-themes helm-swoop helm-helm-commands helm-gitignore helm-descbinds helm-company helm-bibtex haskell-mode graphviz-dot-mode git-commit fsharp-mode flycheck-pos-tip expand-region elpy edit-server company-auctex auto-package-update atomic-chrome airplay ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

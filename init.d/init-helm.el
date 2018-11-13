@@ -3,7 +3,6 @@
 (req-package helm
   :ensure t
   :require async popup
-  :chords ((";l" . helm-bookmarks))
   :bind (("C-x C-b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)
          ("C-c y" . helm-show-kill-ring)

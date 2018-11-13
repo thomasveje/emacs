@@ -46,6 +46,10 @@
 
 ;; use package
 
+;;(unless (package-installed-p 'bind-key)
+;;  (package-refresh-contents)
+;;  (package-install 'bind-key))
+;; use-package requires bind-key, but it should be downloaded automatically with package-install.
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -56,14 +60,17 @@
 
 ;; :el-get keyword for use-package
 
+;; Unsure if requires, tries to get dependencies, or simply gives up.
 (use-package use-package-el-get
   :ensure t
+  :requires use-package
   :config (use-package-el-get-setup))
 
 ;; chords
 
 (use-package use-package-chords
-  :ensure t)
+  :ensure t
+  :requires (use-package bind-key bind-chord))
 
 ;; req-package
 
