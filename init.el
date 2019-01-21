@@ -4,7 +4,11 @@
 
 ;; bootstrap utils
 
+(defconst my-custom-file "~/.emacs.d/custom.el")
+
+(setq custom-file my-custom-file)
 (setq package-enable-at-startup nil)
+(load my-custom-file t)
 ;(setq auto-save-default nil)
 ;(setq make-backup-files nil)
 ;(put 'erase-buffer 'disabled nil)
@@ -23,12 +27,6 @@
 ;; Enable column numbers
 (setq column-number-mode t)
 
-;; Interactive-Do-Things
-;; https://www.emacswiki.org/emacs/InteractivelyDoThings#toc1
-;(ido-mode 1)
-;(setq ido-enable-flex-matching t)
-;(setq ido-everywhere t)
-
 ;; Newline AND indent
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
@@ -43,15 +41,6 @@
 
 ;; use aspell as spell checker
 (setq ispell-program-name "/usr/bin/aspell")
-
-;; font
-;;(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono:pixelsize=15" ))
-
-;; theme
-;;(load-theme 'material t)
-
-;; more sensitive file finding defaults 
-(ffap-bindings)
 
 ;; redirect backups and autosaves
 (setq backup-directory-alist
@@ -108,39 +97,36 @@
   
   (global-set-key "\C-c\C-i" 'my-insert-file-name)
 
+(defun xah-open-in-external-app ()
+  "Open the current file or dired marked files in external app.
+The app is chosen from your OS's preference.
+URL `http://ergoemacs.org/emacs/emacs_dired_open_file_in_ext_apps.html'
+Version 2016-10-15"
+  (interactive)
+  (let* (
+         ($file-list
+          (if (string-equal major-mode "dired-mode")
+              (dired-get-marked-files)
+            (list (buffer-file-name))))
+         ($do-it-p (if (<= (length $file-list) 5)
+                       t
+                     (y-or-n-p "Open more than 5 files? "))))
+    (when $do-it-p
+      (cond
+       ((string-equal system-type "windows-nt")
+        (mapc
+         (lambda ($fpath)
+           (w32-shell-execute "open" (replace-regexp-in-string "/" "\\" $fpath t t))) $file-list))
+       ((string-equal system-type "darwin")
+        (mapc
+         (lambda ($fpath)
+           (shell-command
+            (concat "open " (shell-quote-argument $fpath))))  $file-list))
+       ((string-equal system-type "gnu/linux")
+        (mapc
+         (lambda ($fpath) (let ((process-connection-type nil))
+                            (start-process "" nil "xdg-open" $fpath))) $file-list))))))
 
 ;; load extensions
 
 (add-hook 'after-init-hook (lambda () (load "~/.emacs.d/init-real.el")))
-;; (custom-set-variables
-;;  ;; custom-set-variables was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  '(custom-safe-themes
-;;    (quote
-;;     ("732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" default)))
-;;  '(fill-column 69)
-;;  '(package-selected-packages
-;;    (quote
-;;     (haskell-mode openwith helm-bibtex find-file-in-project yasnippet ivy flycheck company use-package auto-package-update airplay material-theme company-auctex atomic-chrome wgrep-helm helm-themes helm-descbinds helm-swoop helm-helm-commands ace-jump-helm-line fsharp-mode elpy vy wgrep helm-gitignore flycheck-pos-tip expand-region edit-server helm-company avy graphviz-dot-mode load-dir req-package use-package-chords use-package-el-get makefile-runner))))
-;; (custom-set-faces
-;;  ;; custom-set-faces was added by Custom.
-;;  ;; If you edit it by hand, you could mess it up, so be careful.
-;;  ;; Your init file should contain only one such instance.
-;;  ;; If there is more than one, they won't work right.
-;;  )
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (helm gh-md find-file-in-project flycheck auctex yasnippet ivy wgrep company avy use-package wgrep-helm use-package-el-get use-package-chords spinner req-package page-break-lines openwith material-theme markdown-mode magit-popup load-dir irony hydra helm-themes helm-swoop helm-helm-commands helm-gitignore helm-descbinds helm-company helm-bibtex haskell-mode graphviz-dot-mode git-commit fsharp-mode flycheck-pos-tip expand-region elpy edit-server company-auctex auto-package-update atomic-chrome airplay ace-jump-helm-line))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
