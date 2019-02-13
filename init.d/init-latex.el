@@ -2,12 +2,13 @@
 
 (req-package auctex
   :defer t
+  :ensure t
   :pin gnu)
 
 ;; (req-package company-auctex
 ;;   :ensure auctex
-;;   :ensure t
 ;;   :require yasnippet company
+;;   :ensure t
 ;;   :config
 ;;   (add-to-list 'load-path "/home/thomas/git-installs/company-auctex/company-auctex.el")
 ;;   (company-auctex-init)
@@ -21,17 +22,13 @@
 ;;   (global-set-key (kbd "C-x t") 'mathToText))
 
 
-(req-package yasnippet
-  :ensure t
-  :config)
-
 
 (eval-after-load "tex" 
   '(setcdr (assoc "LaTeX" TeX-command-list)
           '("%`%l%(mode) -shell-escape%' %t"
           TeX-run-TeX nil (latex-mode doctex-mode) :help "Run LaTeX")
     )
-  )
+)
 
 (defun detex()
   (interactive)
