@@ -3,3 +3,4 @@ elpa
 el-get
 .last-package-update-day
 auto-save-list
+custom.el

@@ -1,7 +1,7 @@
 (require 'req-package)
 (req-package elpy
   :ensure t
-  :require company find-file-in-project
+  :require (company find-file-in-project yasnippet)
   :pin melpa-stable
   :config
   (elpy-enable)
