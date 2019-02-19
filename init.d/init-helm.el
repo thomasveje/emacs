@@ -3,7 +3,8 @@
 (req-package helm
   :ensure t
   :pin melpa-stable
-  :require (async popup helm-core)
+  :require (async popup)
+;; helm-core - Giver problemer når afhængiheden den specificeres
   :bind (("C-x C-b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)
          ("C-c y" . helm-show-kill-ring)
@@ -16,17 +17,20 @@
   (setq helm-M-x-fuzzy-match t)
   (global-set-key (kbd "C-c f") 'helm-locate))
 
-(req-package helm-core
-  :ensure t
-  :no-require t
-  :pin melpa-stable
-  :require async)
+;; (req-package helm-core - Vil ikke loade når den anmodes sådan her.
+;;   :pin melpa-stable
+;;   :require async
+;;   :ensure t)
 
 (req-package async
-  :ensure t
   :pin melpa-stable
+  :ensure t
   :config
   (setq async-bytecomp-allowed-packages '(all)))
+
+(req-package popup ; as required by helm and fsharp-mode
+  :pin melpa-stable
+  :ensure t)
 
 (req-package ace-jump-helm-line
   :ensure t
