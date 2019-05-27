@@ -5,4 +5,5 @@
   :pin melpa-stable
   :require dash)
 
-(provide 'init-fstar-mode)
+(provide 'init-fstar)
+;;;
