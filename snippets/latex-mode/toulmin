@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: toulmin
+# key: tlmin
+# --
+% Påstand
+$0
+% Belæg (begrundelse - afgørende støtte for påstanden)
+
+% Hjemmel (Hvad får belæg og påstand til at hænge sammen)
+
+% Gendrivelse
+

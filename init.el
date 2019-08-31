@@ -40,7 +40,7 @@
 (global-auto-revert-mode t)
 
 ;; use aspell as spell checker
-(setq ispell-program-name "/usr/bin/aspell")
+(setq ispell-program-name "aspell")
 
 ;; redirect backups and autosaves
 (setq backup-directory-alist

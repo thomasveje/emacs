@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: minted
+# key: mint
+# --
+\begin{minted}[label=$1,frame=$2,breaklines]{$3}
+$0
+\end{minted}

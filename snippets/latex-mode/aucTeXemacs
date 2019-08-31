@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: aucTeXemacs
+# key: auc
+# --
+$0
+%%% Local Variables:
+%%% TeX-master: "$1"
+%%% End:

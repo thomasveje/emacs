@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: inline enumeration
+# key: inlit
+# --
+\begin{enumerate*}[label=$1,font=\bfseries]
+  \item $0
+\end{enumerate*}
