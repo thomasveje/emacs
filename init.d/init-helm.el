@@ -4,7 +4,7 @@
   :ensure t
   :pin melpa-stable
   :require (async popup)
-;; helm-core - Giver problemer når afhængiheden den specificeres
+;; helm-core - Giver problemer når afhængiheden specificeres
   :bind (("C-x C-b" . helm-buffers-list)
          ("C-x C-f" . helm-find-files)
          ("C-c y" . helm-show-kill-ring)
@@ -13,9 +13,11 @@
          ("C-x r b" . helm-filtered-bookmarks)
          ("M-x" . helm-M-x))
   :config
+  (require 'helm-config)
   (helm-mode 1)
   (setq helm-M-x-fuzzy-match t)
-  (global-set-key (kbd "C-c f") 'helm-locate))
+  (global-set-key (kbd "C-c f") 'helm-locate)
+  (customize-set-variable 'helm-ff-lynx-style-map t))
 
 ;; (req-package helm-core - Vil ikke loade når den anmodes sådan her.
 ;;   :pin melpa-stable
@@ -24,26 +26,24 @@
 
 (req-package async
   :pin melpa-stable
-  :ensure t
-  :config
-  (setq async-bytecomp-allowed-packages '(all)))
+  :ensure t)
+  ;; :config
+  ;; (setq async-bytecomp-allowed-packages '(all)))
 
 (req-package popup ; as required by helm and fsharp-mode
   :pin melpa-stable
   :ensure t)
 
-(req-package ace-jump-helm-line
-  :ensure t
-  :commands ace-jump-helm-line
-  :require helm
-  :init (define-key helm-map (kbd "C-;") 'ace-jump-helm-line))
-
+;; (req-package ace-jump-helm-line
+;;   :ensure t
+;;   :commands ace-jump-helm-line
+;;   :require helm
+;;   :init (define-key helm-map (kbd "C-;") 'ace-jump-helm-line))
 
 (req-package helm-bibtex
   :ensure t
   :require helm
   :pin melpa-stable)
-
 
 (req-package helm-company
   :ensure t
@@ -79,10 +79,10 @@
   :ensure t)
 
 
-(req-package helm-themes
-  :ensure t
-  :commands helm-themes
-  :require helm)
+;; (req-package helm-themes
+;;   :ensure t
+;;   :commands helm-themes
+;;   :require helm)
 
 
 (provide 'init-helm)

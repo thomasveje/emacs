@@ -2,7 +2,12 @@
 
 (req-package yasnippet
   :ensure t
-  :config (yas-global-mode)
-  :pin melpa-stable)
+  :pin melpa-stable
+  :config (yas-global-mode))
+
+(req-package yasnippet-snippets
+  :ensure t
+  :pin melpa-stable
+  :require yasnippet)
 
 (provide 'init-yasnippet)

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: verbatim
+# key: vb
+# --
+\verb|$1|$0

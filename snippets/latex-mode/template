@@ -1,0 +1,65 @@
+# -*- mode: snippet -*-
+# name: template
+# key: template
+# --
+\documentclass[12pt]{article}
+% \usepackage[margin=0.75in]{geometry}
+\usepackage{geometry}
+\geometry{
+  a4paper,
+  total={170mm,257mm},
+  left=20mm,
+  top=20mm,
+}
+%\renewcommand{\familydefault}{\sfdefault}
+\usepackage[utf8]{inputenc} % æøå
+\usepackage[T1]{fontenc} % mere æøå
+\usepackage[english]{babel} % danish, english - til orddeling osv.
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{verbatim} % så man kan skrive ren tekst
+\usepackage[inline]{enumitem}
+
+\usepackage{minted}
+\providecommand*{\listingautorefname}{Listing}
+
+\usepackage{braket}
+\usepackage{setspace}
+
+\usepackage{systeme}
+\usepackage{amsmath} % flere matematikkommandoer
+\usepackage{amsfonts}
+\usepackage{xfrac}
+
+% \usepackage{multirow}
+
+% \usepackage{subfiles}
+% \newcommand{\onlyinsubfile}[1]{#1}
+% \newcommand{\notinsubfile}[1]{}
+
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{bm}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\prob}[1]{\text{Pr}\left[ #1 \right]}%
+\newcommand{\braces}[1]{\left{ #1 \right}}
+\newcommand{\parenthesis}[1]{\left( #1 \right)}
+\renewcommand{\mapsto}{\rightarrow}
+
+\setlength{\parindent}{0pt}
+
+
+\title{$1}
+\author{$2}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\newpage
+\section{$3}
+$0
+\end{document}

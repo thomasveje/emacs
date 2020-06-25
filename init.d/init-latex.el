@@ -5,6 +5,13 @@
   :ensure t
   :pin gnu)
 
+(req-package auctex-latexmk
+  :ensure t
+  :require auctex
+  :pin gnu
+  :config (auxtex-latexmk-setup))
+
+
 ;; (req-package company-auctex
 ;;   :ensure auctex
 ;;   :require yasnippet company

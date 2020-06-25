@@ -1,6 +1,6 @@
 (require 'req-package)
 
-(use-package graphviz-dot-mode
+(req-package graphviz-dot-mode
   :ensure t
   :pin melpa-stable)
 
