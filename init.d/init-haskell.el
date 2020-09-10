@@ -9,6 +9,10 @@
   :pin melpa-stable
   :require (flymake-easy))
 
+(req-package flymake-easy
+  :ensure t
+  :pin melpa-stable)
+
 ;; (req-package intero
 ;;   :ensure t
 ;;   :require (flycheck company haskell-mode)

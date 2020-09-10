@@ -40,11 +40,6 @@
 ;;   :require helm
 ;;   :init (define-key helm-map (kbd "C-;") 'ace-jump-helm-line))
 
-(req-package helm-bibtex
-  :ensure t
-  :require helm
-  :pin melpa-stable)
-
 (req-package helm-company
   :ensure t
   :require company
