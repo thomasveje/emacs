@@ -39,6 +39,9 @@
 ;; refresh files every 5 seconds
 (global-auto-revert-mode t)
 
+;;use larger font
+(setq default-frame-alist '((font . "Source Code Pro-14")))
+
 ;; use aspell as spell checker
 (setq ispell-program-name "aspell")
 
