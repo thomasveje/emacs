@@ -41,6 +41,7 @@
 ;;   :init (define-key helm-map (kbd "C-;") 'ace-jump-helm-line))
 
 (req-package helm-company
+  :pin melpa-stable
   :ensure t
   :require company
   :commands helm-company
@@ -49,12 +50,14 @@
 
 
 (req-package helm-descbinds
+  :pin melpa-stable
   :ensure t
   :commands helm-descbinds
   :require helm)
 
 
 (req-package helm-swoop
+  :pin melpa-stable
   :ensure t
   :commands helm-swoop-from-isearch
   :require helm
@@ -62,6 +65,7 @@
 
 
 (req-package helm-package
+  :pin melpa-stable
   :commands helm-package
   :require helm)
 
